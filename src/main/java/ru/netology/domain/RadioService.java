@@ -48,9 +48,9 @@ public class RadioService {
         if ((currentVolume < 10) && (currentVolume >= 0)) {
             this.currentVolume = currentVolume + 1;
         } else if (currentVolume >= 10) {
-            this.currentVolume = 10;
+            return;
         } else {
-            this.currentVolume = 0;
+            return;
         }
 
     }
@@ -59,9 +59,9 @@ public class RadioService {
         if ((currentVolume <= 10) && (currentVolume > 0)) {
             this.currentVolume = currentVolume - 1;
         } else if (currentVolume <= 0) {
-            this.currentVolume = 0;
+            return;
         } else {
-            this.currentVolume = 10;
+            return;
         }
 
     }
