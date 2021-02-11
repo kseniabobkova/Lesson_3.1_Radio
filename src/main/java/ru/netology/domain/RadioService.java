@@ -14,35 +14,22 @@ public class RadioService {
 
 
     public void nextChannel() {
-        if ( (currentRadioChannel < 9) && (currentRadioChannel >= 0))
-
-        {
+        if ((currentRadioChannel < 9) && (currentRadioChannel >= 0)) {
             this.currentRadioChannel = currentRadioChannel + 1;
-        }
-        else if (currentRadioChannel >= 9)
-        {
+        } else if (currentRadioChannel >= 9) {
             this.currentRadioChannel = 0;
-        }
-        else
-        {
+        } else {
             this.currentRadioChannel = 9;
         }
     }
 
 
     public void prevChannel() {
-        if ( (currentRadioChannel <= 9) && (currentRadioChannel > 0))
-
-        {
+        if ((currentRadioChannel <= 9) && (currentRadioChannel > 0)) {
             this.currentRadioChannel = currentRadioChannel - 1;
-        }
-        else if (currentRadioChannel > 9)
-        {
+        } else if (currentRadioChannel > 9) {
             this.currentRadioChannel = 9;
-        }
-
-        else
-        {
+        } else {
             this.currentRadioChannel = 9;
 
         }
@@ -58,34 +45,22 @@ public class RadioService {
 
 
     public void plusVolume() {
-        if ((currentVolume < 10) && (currentVolume >= 0))
-        {
+        if ((currentVolume < 10) && (currentVolume >= 0)) {
             this.currentVolume = currentVolume + 1;
-        }
-
-        else if (currentVolume >= 10)
-        {
+        } else if (currentVolume >= 10) {
             this.currentVolume = 10;
-        }
-        else
-        {
+        } else {
             this.currentVolume = 0;
         }
 
     }
 
     public void minusVolume() {
-        if ((currentVolume <= 10) && (currentVolume > 0))
-        {
+        if ((currentVolume <= 10) && (currentVolume > 0)) {
             this.currentVolume = currentVolume - 1;
-        }
-        else if (currentVolume <= 0)
-        {
+        } else if (currentVolume <= 0) {
             this.currentVolume = 0;
-        }
-
-        else
-        {
+        } else {
             this.currentVolume = 10;
         }
 
