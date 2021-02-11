@@ -111,22 +111,6 @@ public class RadioServiceTest {
     }
 
     @Test
-    public void shouldVolumeUp4() {
-        RadioService radioService = new RadioService();
-        radioService.setCurrentVolume(20);
-        radioService.plusVolume();
-        assertEquals(10, radioService.getCurrentVolume());
-    }
-
-    @Test
-    public void shouldVolumeUp5() {
-        RadioService radioService = new RadioService();
-        radioService.setCurrentVolume(-20);
-        radioService.plusVolume();
-        assertEquals(0, radioService.getCurrentVolume());
-    }
-
-    @Test
     public void shouldVolumeDown() {
         RadioService radioService = new RadioService();
         radioService.minusVolume();
@@ -157,28 +141,6 @@ public class RadioServiceTest {
         assertEquals(9, radioService.getCurrentVolume());
     }
 
-    @Test
-    public void shouldVolumeDown4() {
-        RadioService radioService = new RadioService();
-        radioService.setCurrentVolume(20);
-        radioService.minusVolume();
-        assertEquals(10, radioService.getCurrentVolume());
-    }
-
-    @Test
-    public void shouldVolumeDown5() {
-        RadioService radioService = new RadioService();
-        radioService.setCurrentVolume(-20);
-        radioService.minusVolume();
-        assertEquals(0, radioService.getCurrentVolume());
-    }
-
-    @Test
-    public void shouldVolumeDown6() {
-        RadioService radioService = new RadioService();
-        radioService.setCurrentVolume(-20);
-        assertEquals(-20, radioService.getCurrentVolume());
-    }
 }
 
 
