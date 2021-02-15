@@ -1,15 +1,20 @@
 package ru.netology.domain;
 
-public class RadioService {
+public class RadioService<currentVolume> {
     int currentRadioChannel;
     int currentVolume;
 
     public int getCurrentRadioChannel() {
+
         return currentRadioChannel;
     }
 
     public void setCurrentRadioChannel(int currentRadioChannel) {
-        this.currentRadioChannel = currentRadioChannel;
+        if ((currentRadioChannel > 9) || (currentRadioChannel < 0)) {
+        return;}
+        else
+            this.currentRadioChannel = currentRadioChannel;
+
     }
 
 
@@ -27,11 +32,8 @@ public class RadioService {
     public void prevChannel() {
         if ((currentRadioChannel <= 9) && (currentRadioChannel > 0)) {
             this.currentRadioChannel = currentRadioChannel - 1;
-        } else if (currentRadioChannel > 9) {
-            this.currentRadioChannel = 9;
         } else {
             this.currentRadioChannel = 9;
-
         }
     }
 
@@ -40,14 +42,16 @@ public class RadioService {
     }
 
     public void setCurrentVolume(int currentVolume) {
-        this.currentVolume = currentVolume;
+        if ((currentVolume > 10) || (currentVolume < 0)) {
+            return;
+        }
+        else this.currentVolume = currentVolume;
     }
-
 
     public void plusVolume() {
         if ((currentVolume < 10) && (currentVolume >= 0)) {
             this.currentVolume = currentVolume + 1;
-        } else if (currentVolume >= 10) {
+        } else if (currentVolume == 10) {
             return;
         } else {
             return;

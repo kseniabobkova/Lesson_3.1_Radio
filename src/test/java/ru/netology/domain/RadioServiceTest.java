@@ -7,6 +7,27 @@ import static org.junit.jupiter.api.Assertions.*;
 public class RadioServiceTest {
 
     @Test
+    public void shouldRadioChannelMin() {
+        RadioService radioService = new RadioService();
+        radioService.setCurrentRadioChannel(0);
+        assertEquals(0, radioService.getCurrentRadioChannel());
+    }
+
+    @Test
+    public void shouldRadioChannelMax() {
+        RadioService radioService = new RadioService();
+        radioService.setCurrentRadioChannel(9);
+        assertEquals(9, radioService.getCurrentRadioChannel());
+    }
+
+    @Test
+    public void shouldRadioChannelMiddle() {
+        RadioService radioService = new RadioService();
+        radioService.setCurrentRadioChannel(5);
+        assertEquals(5, radioService.getCurrentRadioChannel());
+    }
+
+    @Test
     public void shouldRadioChannelNext1() {
         RadioService radioService = new RadioService();
         radioService.setCurrentRadioChannel(5);
@@ -30,21 +51,6 @@ public class RadioServiceTest {
         assertEquals(0, radioService.getCurrentRadioChannel());
     }
 
-    @Test
-    public void shouldRadioChannelNext4() {
-        RadioService radioService = new RadioService();
-        radioService.setCurrentRadioChannel(20);
-        radioService.nextChannel();
-        assertEquals(0, radioService.getCurrentRadioChannel());
-    }
-
-    @Test
-    public void shouldRadioChannelNext5() {
-        RadioService radioService = new RadioService();
-        radioService.setCurrentRadioChannel(-20);
-        radioService.nextChannel();
-        assertEquals(9, radioService.getCurrentRadioChannel());
-    }
 
     @Test
     public void shouldRadioChannelPrev1() {
@@ -70,21 +76,6 @@ public class RadioServiceTest {
         assertEquals(8, radioService.getCurrentRadioChannel());
     }
 
-    @Test
-    public void shouldRadioChannelPrev4() {
-        RadioService radioService = new RadioService();
-        radioService.setCurrentRadioChannel(20);
-        radioService.prevChannel();
-        assertEquals(9, radioService.getCurrentRadioChannel());
-    }
-
-    @Test
-    public void shouldRadioChannelPrev5() {
-        RadioService radioService = new RadioService();
-        radioService.setCurrentRadioChannel(-20);
-        radioService.prevChannel();
-        assertEquals(9, radioService.getCurrentRadioChannel());
-    }
 
     @Test
     public void shouldVolumeUp1() {
