@@ -51,24 +51,14 @@ public class RadioService<currentVolume> {
     public void plusVolume() {
         if ((currentVolume < 10) && (currentVolume >= 0)) {
             this.currentVolume = currentVolume + 1;
-        } else if (currentVolume == 10) {
-            return;
-        } else {
-            return;
-        }
-
+        } else return;
     }
 
     public void minusVolume() {
         if ((currentVolume <= 10) && (currentVolume > 0)) {
             this.currentVolume = currentVolume - 1;
-        } else if (currentVolume <= 0) {
-            return;
-        } else {
-            return;
+        } else return;
         }
 
     }
 
-
-}
