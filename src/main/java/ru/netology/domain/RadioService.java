@@ -2,6 +2,8 @@ package ru.netology.domain;
 
 public class RadioService<currentVolume> {
     int currentRadioChannel;
+    int maxChannel = 9;
+    int minChannel = 0;
     int currentVolume;
     int minVolume = 0;
     int maxVolume = 100;
@@ -25,14 +27,14 @@ public class RadioService<currentVolume> {
     }
 
     public void setCurrentRadioChannel(int currentRadioChannel) {
-        if ((currentRadioChannel > 9) || (currentRadioChannel < 0)) {
+        if ((currentRadioChannel > maxChannel) || (currentRadioChannel < minChannel)) {
             return;
         } else
             this.currentRadioChannel = currentRadioChannel;
     }
 
     public void nextChannel() {
-        if ((currentRadioChannel < 9) && (currentRadioChannel >= 0)) {
+        if ((currentRadioChannel < maxChannel) && (currentRadioChannel >= minChannel)) {
             this.currentRadioChannel = currentRadioChannel + 1;
         } else {
             this.currentRadioChannel = 0;
@@ -40,10 +42,10 @@ public class RadioService<currentVolume> {
     }
 
     public void prevChannel() {
-        if ((currentRadioChannel <= 9) && (currentRadioChannel > 0)) {
+        if ((currentRadioChannel <= maxChannel) && (currentRadioChannel > minChannel)) {
             this.currentRadioChannel = currentRadioChannel - 1;
         } else {
-            this.currentRadioChannel = 9;
+            this.currentRadioChannel = maxChannel;
         }
     }
 
